@@ -10,19 +10,17 @@
 Pod::Spec.new do |s|
   s.name             = "CSCConfigLoader"
   s.version          = "0.1.0"
-  s.summary          = "A short description of CSCConfigLoader."
+  s.summary          = "An easy config loader for iOS"
   s.description      = <<-DESC
-                       An optional longer description of CSCConfigLoader
-
-                       * Markdown format.
-                       * Don't worry about the indent, we strip it!
+                       A simpler interface to loading config data from a plist file in your project.
+                       It also supports pods providing their own default configuration options which
+                       can then be overriden from the main project.
                        DESC
-  s.homepage         = "https://github.com/<GITHUB_USERNAME>/CSCConfigLoader"
-  # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
+  s.homepage         = "https://github.com/marblepalace/CSCConfigLoader"
   s.license          = 'MIT'
-  s.author           = { "Ryan Meador" => "ryan.d.meador@gmail.com" }
-  s.source           = { :git => "https://github.com/<GITHUB_USERNAME>/CSCConfigLoader.git", :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.author           = { "Cast Social Company" => "hello@castapp.io" }
+  s.source           = { :git => "https://github.com/marblepalace/CSCConfigLoader.git", :tag => s.version.to_s }
+  s.social_media_url = 'https://twitter.com/cast_app'
 
   s.platform     = :ios, '7.0'
   s.requires_arc = true
@@ -32,7 +30,4 @@ Pod::Spec.new do |s|
     'CSCConfigLoader' => ['Pod/Assets/*.png']
   }
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
 end
