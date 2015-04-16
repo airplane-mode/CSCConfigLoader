@@ -1,0 +1,11 @@
+source 'https://github.com/CocoaPods/Specs.git'
+
+target 'CSCConfigLoader', :exclusive => true do
+  pod "CSCConfigLoader", :path => "../"
+end
+
+target 'Tests', :exclusive => true do
+  pod "CSCConfigLoader", :path => "../"
+
+  
+end
