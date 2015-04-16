@@ -9,6 +9,6 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  CSCConfigLoader: 11de77824785492cdaaf7c64bb7e82024bfaefd6
+  CSCConfigLoader: 5aefc0abd8af9e18c66ba8f35220792ac0b61d87
 
 COCOAPODS: 0.36.3
