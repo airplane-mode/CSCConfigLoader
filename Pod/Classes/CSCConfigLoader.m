@@ -42,13 +42,22 @@ static NSMutableDictionary *_bundleConfigs;
         _bundleConfigs = [NSMutableDictionary new];
     }
     
-    if (!_bundleConfigs[bundle.bundlePath]) {
+    NSString *bundleKey = bundle.bundleIdentifier ? bundle.bundleIdentifier : bundle.bundlePath;
+    
+    if (!_bundleConfigs[bundleKey]) {
         NSString *path = [bundle pathForResource:@"config" ofType:@"plist"];
         NSDictionary *dict = [[NSDictionary alloc] initWithContentsOfFile:path];
-        _bundleConfigs[bundle.bundlePath] = [[CSCConfigLoader alloc] initWithDictionary:dict];
+        
+        if (!dict) {
+            NSLog(@"CSCConfigLoader: couldn't load config for bundle %@", bundleKey);
+        } else {
+            NSLog(@"CSCConfigLoader: loaded config for bundle %@", bundleKey);
+        }
+        
+        _bundleConfigs[bundleKey] = [[CSCConfigLoader alloc] initWithDictionary:dict];
     }
     
-    return _bundleConfigs[bundle.bundlePath];
+    return _bundleConfigs[bundleKey];
 }
 
 - (instancetype) initWithDictionary:(NSDictionary *)dict
