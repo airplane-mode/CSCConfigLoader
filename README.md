@@ -41,10 +41,22 @@ Instances are internally cached inside the library for quick access, so they onl
 Returns an object representing the config from the main bundle.
 
 #### `+ (instancetype) configFromBundle:(NSBundle *)bundle`
-Returns an object representing the config from a specific bundle.  This is most useful for a pod developer who has their own private config inside their pod's bundle.  You can load your pod's bundle either by its identifier or by a class in your pod; see the [NSBundle documentation](https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSBundle_Class)).
+Returns an object representing the config from a specific bundle.  This is most useful for a pod developer who has their own private config inside their pod's resource bundle.
 
 #### `+ (instancetype) mainConfigWithFallbackFrom:(NSBundle *)bundle`
-Returns an object representing the config from the main bundle, but it will additionally search the config from the provided bundle if the key isn't found in the main bundle.  You can load your pod's bundle either by its identifier or by a class in your pod; see the [NSBundle documentation](https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSBundle_Class)).
+Returns an object representing the config from the main bundle, but it will additionally search the config from the provided bundle if the key isn't found in the main bundle.  This is most useful for a pod developer who has defaults specified in their pod's resource bundle, but wants the main application (pod's user) to be able to override these values.
+
+#### Loading your pod's resource bundle
+
+Most likely, you'll want to load your pod's resource bundle by name.  This is the key specified in the dictionary to your podspec's `[resource_bundles](http://guides.cocoapods.org/syntax/podspec.html#resource_bundles)` property.  You can then load it like this:
+
+```
+[NSBundle bundleWithPath:[[NSBundle mainBundle]
+            pathForResource:@"YOUR_BUNDLE_NAME"
+                     ofType:@"bundle"]];
+```
+
+It may also be possible to use the `bundleForClass:` method of `NSBundle` and pass in one of your pod's classes, depending on your pod configuration.  This is beyond the scope of this documentation.
 
 ### Getting a key from an instance
 All keys are available via subscript, just like the syntax for accessing keys in an NSDictionary.  Assuming an instance named `conf`, you could get the value for the key named `YOUR_KEY_HERE` like this: `conf[@"YOUR_KEY_HERE"]`.
