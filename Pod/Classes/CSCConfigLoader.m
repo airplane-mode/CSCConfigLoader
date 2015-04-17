@@ -82,11 +82,19 @@ static NSMutableDictionary *_bundleConfigs;
 
 - (void) fallBackToConfig:(CSCConfigLoader *)config
 {
-    self.fallback = config;
+    if (!self.config) { // if there's no main config, the fallback _is_ the config
+        self.config = config.config;
+    } else {
+        self.fallback = config;
+    }
 }
 
 - (id)objectForKeyedSubscript:(id <NSCopying>)key
 {
+    if (!self.config) { // the bundle may not actually have a config file
+        return nil;
+    }
+    
     if (self.config[key]) {
         return self.config[key];
     }
