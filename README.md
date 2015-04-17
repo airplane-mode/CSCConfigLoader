@@ -4,6 +4,10 @@
 [![License](https://img.shields.io/cocoapods/l/CSCConfigLoader.svg?style=flat)](http://cocoapods.org/pods/CSCConfigLoader)
 [![Platform](https://img.shields.io/cocoapods/p/CSCConfigLoader.svg?style=flat)](http://cocoapods.org/pods/CSCConfigLoader)
 
+An easy interface for loading static configuration data (such as server names or API keys or anything else you can think of) in an iOS app.  Supports allowing a pod to provide its own defaults and override them in the main app.  Keep that config data out of the source code!
+
+This pod is a rather thin wrapper around the iOS plist file load capabilities, but it provides a simpler interface, caching, and adds inheritance.
+
 ## Installation
 
 CSCConfigLoader is available through [CocoaPods](http://cocoapods.org). To install
