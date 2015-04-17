@@ -33,7 +33,7 @@ To access your config values, first you'll need to import the library:
 #import "CSCConfigLoader.h"
 ```
 
-## Obtaining an instance
+### Obtaining an instance
 
 Instances are internally cached inside the library for quick access, so they only incur the loading time the first time you access them -- don't be afraid to use these methods to access keys repeatedly.  As such, the only way to create an instance is via a class method on `CSCConfigLoader`.  There are three such methods:
 
@@ -46,7 +46,7 @@ Returns an object representing the config from a specific bundle.  This is most 
 #### `+ (instancetype) mainConfigWithFallbackFrom:(NSBundle *)bundle`
 Returns an object representing the config from the main bundle, but it will additionally search the config from the provided bundle if the key isn't found in the main bundle.  You can load your pod's bundle either by its identifier or by a class in your pod; see the [NSBundle documentation](https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSBundle_Class)).
 
-## Getting a key from an instance
+### Getting a key from an instance
 All keys are available via subscript, like so (assuming an instance named `conf`: `conf[@"YOUR_KEY_HERE"]`.  In practice, I expect you'll mostly want to use it as a one-liner as in `[CSCConfigLoader mainConfig][@"YOUR_KEY_HERE"]`.  I hope it goes without saying to replace `YOUR_KEY_HERE` with the name of whatever key's value you want to access.
 
 That's all there is to it!
