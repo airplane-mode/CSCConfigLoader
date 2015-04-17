@@ -48,7 +48,7 @@ Returns an object representing the config from the main bundle, but it will addi
 
 #### Loading your pod's resource bundle
 
-Most likely, you'll want to load your pod's resource bundle by name.  This is the key specified in the dictionary to your podspec's `[resource_bundles](http://guides.cocoapods.org/syntax/podspec.html#resource_bundles)` property.  You can then load it like this:
+Most likely, you'll want to load your pod's resource bundle by name.  This is the key specified in the dictionary to your podspec's [`resource_bundles`](http://guides.cocoapods.org/syntax/podspec.html#resource_bundles) property.  You can then load it like this:
 
 ```
 [NSBundle bundleWithPath:[[NSBundle mainBundle]
