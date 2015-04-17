@@ -9,7 +9,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "CSCConfigLoader"
-  s.version          = "0.1.1"
+  s.version          = "0.1.2"
   s.summary          = "An easy config loader for iOS"
   s.description      = <<-DESC
                        A simpler interface to loading config data from a plist file in your project.
