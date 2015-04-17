@@ -47,7 +47,9 @@ Returns an object representing the config from a specific bundle.  This is most 
 Returns an object representing the config from the main bundle, but it will additionally search the config from the provided bundle if the key isn't found in the main bundle.  You can load your pod's bundle either by its identifier or by a class in your pod; see the [NSBundle documentation](https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSBundle_Class)).
 
 ### Getting a key from an instance
-All keys are available via subscript, like so (assuming an instance named `conf`: `conf[@"YOUR_KEY_HERE"]`.  In practice, I expect you'll mostly want to use it as a one-liner as in `[CSCConfigLoader mainConfig][@"YOUR_KEY_HERE"]`.  I hope it goes without saying to replace `YOUR_KEY_HERE` with the name of whatever key's value you want to access.
+All keys are available via subscript, just like the syntax for accessing keys in an NSDictionary.  Assuming an instance named `conf`, you could get the value for the key named `YOUR_KEY_HERE` like this: `conf[@"YOUR_KEY_HERE"]`.
+
+In practice, I expect you'll mostly want to use it as a one-liner as in `[CSCConfigLoader mainConfig][@"YOUR_KEY_HERE"]`.  I hope it goes without saying to replace `YOUR_KEY_HERE` with the name of whatever key's value you want to access.
 
 That's all there is to it!
 
