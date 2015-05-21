@@ -67,7 +67,7 @@ That's all there is to it!
 
 ## Author
 
-This pod was created by Cast Social Company, specifically for use in our flagship product, [Cast](http://castapp.io).  Hopefully it's useful to someone else as well!
+This pod was created by Cast Social Company, specifically for use in sharing code (in the form of a private pod) between our flagship product, [Cast](https://castapp.io), and its spinoff, [PARTYVISION[(https://castapp.io/partyvision).  We needed an easy way to have the two different apps override some of the config values for the pod, but not have to specify duplicate config info for the values that were the same between both.  Hopefully it's useful to someone else as well!
 
 ## License
 
