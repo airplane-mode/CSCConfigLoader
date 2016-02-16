@@ -25,7 +25,7 @@ The example project simply loads the main config and prints out a test value fro
 
 ## Usage
 
-Create your config file as a Property List file by right-clicking the directory you want it in in XCode -> New File -> Resource -> Property List.  Make sure to name your file "config".  You can then add any configuration values you wish to it.
+Create your config file as a Property List file by right-clicking the directory you want it in in Xcode -> New File -> Resource -> Property List.  Make sure to name your file "config".  You can then add any configuration values you wish to it.
 
 To access your config values, first you'll need to import the library:
 
